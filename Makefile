@@ -29,7 +29,7 @@ $(NAME): Makefile $(LIBFT_OBJS) $(OBJS)
 	@echo "Creando libftprintf.a..."
 	ar rcs $(NAME) $(OBJS) $(LIBFT_OBJS)
 
-%.o: %.c ft_printf.h
+%.o: %.c ft_printf.h Makefile
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 clean:
