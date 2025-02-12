@@ -60,7 +60,7 @@ void	ft_printf_hex(unsigned int hex, int i, const char *str, int *count)
 {
 	char	*nums;
 
-	if (str[i + 1] == 'x' || str[i + 1] == 'p')
+	if (str[i + 1] == 'x')
 		nums = "0123456789abcdef";
 	if (str[i + 1] == 'X')
 		nums = "0123456789ABCDEF";
