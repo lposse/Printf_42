@@ -22,7 +22,7 @@ int		ft_printf(const char *str, ...);
 void	ft_printf_char(int c, int i, const char *str, int *count);
 void	ft_printf_str(char *str, int *count);
 void	ft_printf_int(int c, int i, const char *str, int *count);
-void	ft_printf_int_u(unsigned int c, int *count);
+void	ft_printf_int_u(unsigned int c, int *count, const char *str, int i);
 void	ft_printf_hex(unsigned int hex, int i, const char *str, int *count);
 void	ft_printf_ptr(void *ptr, int *count);
 void	ft_printf_ptr_rec(uintptr_t address, int *count);
