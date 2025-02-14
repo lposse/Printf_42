@@ -13,18 +13,21 @@
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-void	ft_printf_int_u(unsigned int c, int *count)
+void	ft_printf_int_u(unsigned int c, int *count, const char *str, int i)
 {
 	char	digit;
 
 	if (c == (unsigned int)(-2147483648))
 	{
-		ft_putstr("-2147483648");
-		(*count) += 11;
-		return ;
+		if (str[i + 1] == 'i' || str[i + 1] == 'd')
+		{
+			ft_putstr("-2147483648");
+			(*count) += 11;
+			return ;
+		}
 	}
 	if (c >= 10)
-		ft_printf_int_u((c / 10), count);
+		ft_printf_int_u((c / 10), count, str, i);
 	digit = (c % 10) + '0';
 	write (1, &digit, 1);
 	(*count)++;
@@ -35,7 +38,7 @@ void	ft_printf_int(int c, int i, const char *str, int *count)
 {
 	if ((str[i] == '%' && str[i + 1] == 'u' && c < 0) || c == -2147483648)
 	{
-		ft_printf_int_u((unsigned int)c, count);
+		ft_printf_int_u((unsigned int)c, count, str, i);
 		return ;
 	}
 	if (c < 0)
